@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: AC_controller
+    build:
+      context: ./build
+    restart: unless-stopped
+    

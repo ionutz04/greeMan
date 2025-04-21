@@ -30,3 +30,4 @@ WORKDIR /app
 RUN apk del gcc musl-dev python3-dev
 
 CMD ["python3", "controller.py"]
+# CMD [ "/bin/sleep 10000" ]

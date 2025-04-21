@@ -14,15 +14,15 @@ logger.setLevel(logging.INFO)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
 # File handler
-file_handler = logging.FileHandler('./logs/ac_controller.log')
-file_handler.setFormatter(formatter)
+# file_handler = logging.FileHandler('./logs/ac_controller.log')
+# file_handler.setFormatter(formatter)
 
 # Console handler
 console_handler = logging.StreamHandler()
 console_handler.setFormatter(formatter)
 
 # Add handlers
-logger.addHandler(file_handler)
+# logger.addHandler(file_handler)
 logger.addHandler(console_handler)
 
 _LOGGER = logging.getLogger(__name__)

@@ -88,3 +88,20 @@
 2025-04-21 09:46:57,953 - __main__ - INFO - Current temperature: 24.2°C
 2025-04-21 09:47:48,236 - __main__ - INFO - Shutting down...
 2025-04-21 09:47:49,007 - __main__ - INFO - Clean shutdown complete
+2025-04-21 19:22:14,096 - greeclimate.discovery - INFO - Scanning for Gree devices ...
+2025-04-21 19:22:14,204 - greeclimate.discovery - INFO - Found gree device Device: 1ec33813 @ 192.168.0.153:7000 (mac: f4911ec33813)
+2025-04-21 19:22:19,107 - __main__ - INFO - Found device: 1ec33813 (192.168.0.153:7000)
+2025-04-21 19:22:19,108 - greeclimate.device - INFO - Starting device binding to Device: 1ec33813 @ 192.168.0.153:7000 (mac: f4911ec33813)
+2025-04-21 19:22:19,108 - greeclimate.device - INFO - Attempting to bind to device using CipherV1
+2025-04-21 19:22:19,125 - greeclimate.device - INFO - Bound to device using key 1Cd4Fg7Ij0Lm3Op6
+2025-04-21 19:22:19,156 - __main__ - INFO - Current temperature: 28.1°C
+2025-04-21 19:22:19,157 - __main__ - INFO - Temperature above 24°C - starting AC
+2025-04-21 19:22:19,160 - __main__ - INFO - AC ON at 23.0°C
+2025-04-21 19:22:19,176 - greeclimate.device - INFO - Device version is 3.75, hid 362001000748+U-CS532Z(LT)V3.75.bin
+2025-04-21 19:23:19,195 - __main__ - INFO - Current temperature: 28.1°C
+2025-04-21 19:24:19,218 - __main__ - INFO - Current temperature: 28.0°C
+2025-04-21 19:25:19,240 - __main__ - INFO - Current temperature: 28.0°C
+2025-04-21 19:26:19,262 - __main__ - INFO - Current temperature: 27.8°C
+2025-04-21 19:27:19,288 - __main__ - INFO - Current temperature: 27.8°C
+2025-04-21 19:28:19,314 - __main__ - INFO - Current temperature: 27.8°C
+2025-04-21 19:29:19,365 - __main__ - INFO - Current temperature: 27.8°C
