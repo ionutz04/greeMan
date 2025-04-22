@@ -30,7 +30,7 @@ _LOGGER = logging.getLogger(__name__)
 # Global state tracking
 current_state = {
     'power': False,
-    'target_temp': 23.0  # Default temperature when starting AC
+    'target_temp': 22.0  # Default temperature when starting AC
 }
 running = True
 
@@ -134,8 +134,8 @@ async def temperature_control_loop(device: Device, check_interval=60):
             _LOGGER.info("Temperature above 24°C - starting AC")
             await set_ac_state(device, True)
             
-        elif current_temp < 23 and actual_power:
-            _LOGGER.info("Temperature below 23°C - stopping AC")
+        elif current_temp < 22.5 and actual_power:
+            _LOGGER.info("Temperature below 22.5°C - stopping AC")
             await set_ac_state(device, False)
 
         await asyncio.sleep(check_interval)
