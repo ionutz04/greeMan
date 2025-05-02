@@ -25,8 +25,8 @@ ENV PATH="/app/venv/bin:$PATH"
 RUN pip install --no-cache-dir greeclimate
 
 # Download controller script (remove token parameter)
-#RUN wget https://raw.githubusercontent.com/ionutz04/greeMan/refs/heads/main/scripts/controller.py?token=GHSAT0AAAAAADCKLWH6IOPWIMPXIMZQZNVI2AGQL4Q -O /app/controller.py
-COPY ./controller.py /app/
+RUN wget https://raw.githubusercontent.com/ionutz04/greeMan/refs/heads/main/scripts/controller.py?token=GHSAT0AAAAAADCKLWH7PGC3HI5ZONX22SNA2AVHC7Q -O /app/controller.py
+# COPY ./controller.py /app/
 
 WORKDIR /app
 
