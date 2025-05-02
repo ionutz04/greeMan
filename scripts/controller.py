@@ -3,6 +3,8 @@ import logging
 import signal
 import subprocess
 import re
+import json
+import datetime
 from greeclimate.discovery import Discovery
 from greeclimate.device import Device, Mode
 
@@ -69,7 +71,21 @@ def get_snmp_temperature():
     except Exception as e:
         _LOGGER.error(f"Temperature read error: {str(e)}")
         return None
-
+def load_config(config_path='ac_config.json'):
+    try:
+        with open(config_path, 'r') as config_file:
+            return json.load(config_file)
+    except Exception as e:
+        _LOGGER.error(f"Failed to load configuration: {str(e)}")
+        # Return default values if config file can't be loaded
+        return {
+            "temperature_on": 24.0,
+            "temperature_off": 22.5,
+            "restricted_time": {
+                "start": "21:00",
+                "end": "10:00"
+            }
+        }
 async def discover_and_bind():
     """Discover and bind to the first available Gree device"""
     try:
@@ -109,36 +125,69 @@ async def set_ac_state(device: Device, power: bool):
         
     except Exception as e:
         _LOGGER.error("Failed to set AC state: %s", str(e))
+def is_time_restricted(config):
+    """Check if current time is within the restricted period"""
+    now = datetime.datetime.now().time()
+    
+    # Parse restricted time periods from config
+    start_time = datetime.datetime.strptime(config["restricted_time"]["start"], "%H:%M").time()
+    end_time = datetime.datetime.strptime(config["restricted_time"]["end"], "%H:%M").time()
+    
+    # Handle overnight restrictions (e.g., 21:00 to 10:00)
+    if start_time > end_time:
+        return now >= start_time or now <= end_time
+    # Handle same-day restrictions (e.g., 13:00 to 15:00)
+    else:
+        return start_time <= now <= end_time
 
 async def temperature_control_loop(device: Device, check_interval=60):
-    """Main control loop with proper hysteresis"""
+    """Main control loop with proper hysteresis and time-based restrictions"""
     while running:
+        # Reload configuration on each iteration to catch any changes
+        config = load_config()
+        
+        # Extract configuration values
+        temp_on = config["temperature_on"]
+        temp_off = config["temperature_off"]
+        
         current_temp = get_snmp_temperature()
         if current_temp is None:
             _LOGGER.warning("Failed to read temperature, retrying...")
             await asyncio.sleep(check_interval)
             continue
 
-        _LOGGER.info("Current temperature: %.1f°C", current_temp)
+        _LOGGER.info(f"Current temperature: {current_temp:.1f}°C")
         
         try:
             await device.update_state()
             actual_power = device.power
         except Exception as e:
-            _LOGGER.error("State update failed: %s", str(e))
+            _LOGGER.error(f"State update failed: {str(e)}")
             actual_power = current_state['power']
 
         current_state['power'] = actual_power
         
-        if current_temp > 24 and not actual_power:
-            _LOGGER.info("Temperature above 24°C - starting AC")
+        # Check if current time is within restricted period
+        time_restricted = is_time_restricted(config)
+        
+        # Turn on AC if:
+        # 1. Temperature is above threshold
+        # 2. AC is not already running
+        # 3. Current time is NOT within restricted period
+        if current_temp > temp_on and not actual_power and not time_restricted:
+            _LOGGER.info(f"Temperature above {temp_on}°C - starting AC")
             await set_ac_state(device, True)
             
-        elif current_temp < 22.5 and actual_power:
-            _LOGGER.info("Temperature below 22.5°C - stopping AC")
+        # Turn off AC if:
+        # 1. Temperature is below threshold OR time is within restricted period
+        # 2. AC is currently running
+        elif (current_temp < temp_off or time_restricted) and actual_power:
+            reason = f"Temperature below {temp_off}°C" if current_temp < temp_off else "Within restricted time period"
+            _LOGGER.info(f"{reason} - stopping AC")
             await set_ac_state(device, False)
 
         await asyncio.sleep(check_interval)
+
 
 def shutdown(signum, frame):
     """Handle shutdown signals"""

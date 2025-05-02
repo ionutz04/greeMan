@@ -1,0 +1,9 @@
+{
+        "temperature_on": 24.0,
+        "temperature_off": 22.5,
+        "restricted_time": {
+            "start": "21:00",
+            "end": "10:00"
+        }
+    }
+    

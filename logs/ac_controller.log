@@ -160,3 +160,92 @@
 2025-04-21 20:22:21,375 - __main__ - INFO - Current temperature: 25.6°C
 2025-04-21 20:23:21,414 - __main__ - INFO - Current temperature: 25.6°C
 2025-04-21 20:24:21,439 - __main__ - INFO - Current temperature: 25.6°C
+2025-04-21 20:25:21,459 - __main__ - INFO - Current temperature: 25.6°C
+2025-04-21 20:26:21,480 - __main__ - INFO - Current temperature: 25.6°C
+2025-04-21 20:27:21,501 - __main__ - INFO - Current temperature: 25.6°C
+2025-04-21 20:28:21,530 - __main__ - INFO - Current temperature: 25.5°C
+2025-04-21 20:29:21,568 - __main__ - INFO - Current temperature: 25.5°C
+2025-04-21 20:30:21,594 - __main__ - INFO - Current temperature: 25.5°C
+2025-04-21 20:31:21,617 - __main__ - INFO - Current temperature: 25.5°C
+2025-04-21 20:32:21,639 - __main__ - INFO - Current temperature: 25.5°C
+2025-04-21 20:33:21,680 - __main__ - INFO - Current temperature: 25.5°C
+2025-04-21 20:34:21,701 - __main__ - INFO - Current temperature: 25.5°C
+2025-04-21 20:35:21,724 - __main__ - INFO - Current temperature: 25.4°C
+2025-04-21 20:36:21,745 - __main__ - INFO - Current temperature: 25.4°C
+2025-04-21 20:37:21,767 - __main__ - INFO - Current temperature: 25.4°C
+2025-04-21 20:38:21,812 - __main__ - INFO - Current temperature: 25.3°C
+2025-04-21 20:39:21,835 - __main__ - INFO - Current temperature: 25.3°C
+2025-04-21 20:40:21,857 - __main__ - INFO - Current temperature: 25.3°C
+2025-04-21 20:41:22,007 - __main__ - INFO - Current temperature: 25.3°C
+2025-04-21 20:42:22,061 - __main__ - INFO - Current temperature: 25.2°C
+2025-04-21 20:42:22,062 - greeclimate.network - ERROR - Connection reported an exception
+Traceback (most recent call last):
+  File "/home/ionutz/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1273, in sendto
+    self._sock.send(data)
+OSError: [Errno 101] Network is unreachable
+2025-04-21 20:43:22,087 - __main__ - INFO - Current temperature: 25.2°C
+2025-04-21 20:43:22,087 - greeclimate.network - ERROR - Connection reported an exception
+Traceback (most recent call last):
+  File "/home/ionutz/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1273, in sendto
+    self._sock.send(data)
+OSError: [Errno 101] Network is unreachable
+2025-04-21 20:44:22,120 - __main__ - INFO - Current temperature: 25.2°C
+2025-04-21 20:44:22,121 - greeclimate.network - ERROR - Connection reported an exception
+Traceback (most recent call last):
+  File "/home/ionutz/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1273, in sendto
+    self._sock.send(data)
+OSError: [Errno 101] Network is unreachable
+2025-04-21 20:45:22,144 - __main__ - INFO - Current temperature: 25.2°C
+2025-04-21 20:45:22,144 - greeclimate.network - ERROR - Connection reported an exception
+Traceback (most recent call last):
+  File "/home/ionutz/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1273, in sendto
+    self._sock.send(data)
+OSError: [Errno 101] Network is unreachable
+2025-04-21 20:46:22,168 - __main__ - INFO - Current temperature: 25.1°C
+2025-04-21 20:46:22,169 - greeclimate.network - ERROR - Connection reported an exception
+Traceback (most recent call last):
+  File "/home/ionutz/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1273, in sendto
+    self._sock.send(data)
+OSError: [Errno 101] Network is unreachable
+2025-04-21 20:47:22,192 - __main__ - INFO - Current temperature: 25.1°C
+2025-04-21 20:47:22,192 - greeclimate.network - ERROR - Connection reported an exception
+Traceback (most recent call last):
+  File "/home/ionutz/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1273, in sendto
+    self._sock.send(data)
+OSError: [Errno 101] Network is unreachable
+2025-04-21 20:48:22,234 - __main__ - INFO - Current temperature: 25.1°C
+2025-04-21 20:48:22,234 - greeclimate.network - ERROR - Connection reported an exception
+Traceback (most recent call last):
+  File "/home/ionutz/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1273, in sendto
+    self._sock.send(data)
+OSError: [Errno 101] Network is unreachable
+2025-04-21 20:49:22,272 - __main__ - INFO - Current temperature: 25.1°C
+2025-04-21 20:49:22,272 - greeclimate.network - ERROR - Connection reported an exception
+Traceback (most recent call last):
+  File "/home/ionutz/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1273, in sendto
+    self._sock.send(data)
+OSError: [Errno 101] Network is unreachable
+2025-04-21 20:50:22,297 - __main__ - INFO - Current temperature: 25.1°C
+2025-04-21 20:50:22,298 - greeclimate.network - ERROR - Connection reported an exception
+Traceback (most recent call last):
+  File "/home/ionutz/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1273, in sendto
+    self._sock.send(data)
+OSError: [Errno 101] Network is unreachable
+2025-04-21 20:51:22,331 - __main__ - INFO - Current temperature: 25.1°C
+2025-04-21 20:51:22,332 - greeclimate.network - ERROR - Connection reported an exception
+Traceback (most recent call last):
+  File "/home/ionutz/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1273, in sendto
+    self._sock.send(data)
+OSError: [Errno 101] Network is unreachable
+2025-04-21 20:52:22,360 - __main__ - INFO - Current temperature: 25.0°C
+2025-04-21 20:52:22,361 - greeclimate.network - ERROR - Connection reported an exception
+Traceback (most recent call last):
+  File "/home/ionutz/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1273, in sendto
+    self._sock.send(data)
+OSError: [Errno 101] Network is unreachable
+2025-04-21 20:53:22,391 - __main__ - INFO - Current temperature: 25.0°C
+2025-04-21 20:53:22,392 - greeclimate.network - ERROR - Connection reported an exception
+Traceback (most recent call last):
+  File "/home/ionutz/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1273, in sendto
+    self._sock.send(data)
+OSError: [Errno 101] Network is unreachable
