@@ -7,3 +7,5 @@ services:
       context: ./build
     restart: unless-stopped
     network_mode: host
+    volumes: 
+      - ./scripts:/app
