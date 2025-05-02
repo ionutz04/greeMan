@@ -24,6 +24,12 @@ RUN . /app/venv/bin/activate
 ENV PATH="/app/venv/bin:$PATH"
 # Install Python packages using virtual environment's pip
 # RUN source /app/venv/bin/activate
+RUN pip install --upgrade pip
+RUN pip install netifaces==0.10.9
+RUN pip uninstall pycrypto pycryptodome pycryptodomex -y
+RUN pip install pycryptodome==3.10.4
+#RUN pip install netifaces
+#RUN pip install pycrypto
 RUN pip install --no-cache-dir greeclimate
 
 # Download controller script (remove token parameter)
